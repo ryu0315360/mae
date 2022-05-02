@@ -1,0 +1,53 @@
+submitit INFO (2022-05-01 22:50:10,921) - Starting with JobEnvironment(job_id=66198, hostname=idonghuiui-MacBookPro.local, local_rank=4(8), node=0(1), global_rank=4(8))
+submitit INFO (2022-05-01 22:50:10,921) - Loading pickle: /Users/dongheelee/Desktop/GitHub/mae/job_test/66198_submitted.pkl
+Process group: 8 tasks, rank: 4
+Not using distributed mode
+[22:50:11.499910] job dir: /Users/dongheelee/Desktop/GitHub/mae
+[22:50:11.499972] Namespace(accum_iter=1,
+batch_size=64,
+blr=0.00015,
+comment='',
+data_path='/Users/dongheelee/Desktop/GitHub/mae/tiny-imagenet-200',
+device='cuda',
+dist_on_itp=False,
+dist_url='file:///Users/dongheelee/Desktop/GitHub/mae/checkpoint/dongheelee/experiments/a14a659c843e4513841566fc7b28ed9d_init',
+distributed=False,
+epochs=100,
+gpu=4,
+input_size=224,
+job_dir='/Users/dongheelee/Desktop/GitHub/mae/job_test',
+local_rank=-1,
+log_dir=PosixPath('/Users/dongheelee/Desktop/GitHub/mae/job_test'),
+lr=None,
+mask_ratio=0.75,
+min_lr=0.0,
+model='mae_vit_base_patch16',
+ngpus=8,
+nodes=1,
+norm_pix_loss=True,
+num_workers=10,
+output_dir=PosixPath('/Users/dongheelee/Desktop/GitHub/mae/job_test'),
+partition='learnfair',
+pin_mem=True,
+rank=4,
+resume='',
+seed=0,
+start_epoch=0,
+timeout=4320,
+use_volta32=True,
+warmup_epochs=40,
+weight_decay=0.05,
+world_size=8)
+[22:50:12.033647] Dataset ImageFolder
+    Number of datapoints: 100000
+    Root location: /Users/dongheelee/Desktop/GitHub/mae/tiny-imagenet-200/train
+    StandardTransform
+Transform: Compose(
+               RandomResizedCrop(size=(224, 224), scale=(0.2, 1.0), ratio=(0.75, 1.3333), interpolation=bicubic)
+               RandomHorizontalFlip(p=0.5)
+               ToTensor()
+               Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+           )
+[22:50:12.033816] Sampler_train = <torch.utils.data.distributed.DistributedSampler object at 0x106c5b310>
+[22:50:12.040714] This is from MAE __init__
+submitit ERROR (2022-05-01 22:50:14,185) - Submitted job triggered an exception

@@ -1,0 +1,41 @@
+submitit INFO (2022-05-01 21:47:51,965) - Starting with JobEnvironment(job_id=59729, hostname=idonghuiui-MacBookPro.local, local_rank=3(8), node=0(1), global_rank=3(8))
+submitit INFO (2022-05-01 21:47:51,965) - Loading pickle: /Users/dongheelee/Desktop/GitHub/mae/job_test/59729_submitted.pkl
+Process group: 8 tasks, rank: 3
+Not using distributed mode
+[21:47:52.579861] job dir: /Users/dongheelee/Desktop/GitHub/mae
+[21:47:52.579932] Namespace(accum_iter=1,
+batch_size=64,
+blr=0.00015,
+comment='',
+data_path='/tiny-imagenet-200',
+device='cuda',
+dist_on_itp=False,
+dist_url='file:///Users/dongheelee/Desktop/GitHub/mae/checkpoint/dongheelee/experiments/a323e1a8759e426984e71e5051fec69f_init',
+distributed=False,
+epochs=100,
+gpu=3,
+input_size=224,
+job_dir='/Users/dongheelee/Desktop/GitHub/mae/job_test',
+local_rank=-1,
+log_dir=PosixPath('/Users/dongheelee/Desktop/GitHub/mae/job_test'),
+lr=None,
+mask_ratio=0.75,
+min_lr=0.0,
+model='mae_vit_base_patch16',
+ngpus=8,
+nodes=1,
+norm_pix_loss=True,
+num_workers=10,
+output_dir=PosixPath('/Users/dongheelee/Desktop/GitHub/mae/job_test'),
+partition='learnfair',
+pin_mem=True,
+rank=3,
+resume='',
+seed=0,
+start_epoch=0,
+timeout=4320,
+use_volta32=True,
+warmup_epochs=40,
+weight_decay=0.05,
+world_size=8)
+submitit ERROR (2022-05-01 21:47:52,594) - Submitted job triggered an exception

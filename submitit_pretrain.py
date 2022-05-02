@@ -20,7 +20,7 @@ def parse_args():
     trainer_parser = trainer.get_args_parser()
     parser = argparse.ArgumentParser("Submitit for MAE pretrain", parents=[trainer_parser])
     parser.add_argument("--ngpus", default=8, type=int, help="Number of gpus to request on each node")
-    parser.add_argument("--nodes", default=2, type=int, help="Number of nodes to request")
+    parser.add_argument("--nodes", default=1, type=int, help="Number of nodes to request") ## default = 2 였음!!
     parser.add_argument("--timeout", default=4320, type=int, help="Duration of the job")
     parser.add_argument("--job_dir", default="", type=str, help="Job dir. Leave empty for automatic.")
 
@@ -32,8 +32,11 @@ def parse_args():
 
 def get_shared_folder() -> Path:
     user = os.getenv("USER")
-    if Path("/checkpoint/").is_dir():
-        p = Path(f"/checkpoint/{user}/experiments")
+    # print("This is user: ", user) # dongheelee
+    # print(Path("../checkpoint/"))
+    if Path("/Users/dongheelee/Desktop/GitHub/mae/checkpoint/").is_dir(): # Path("/checkpoint/")
+        p = Path(f"/Users/dongheelee/Desktop/GitHub/mae/checkpoint/{user}/experiments")
+        # p = Path(f"/checkpoint/{user}/experiments")
         p.mkdir(exist_ok=True)
         return p
     raise RuntimeError("No shared folder available")

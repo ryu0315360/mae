@@ -1,0 +1,31 @@
+/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/torchvision/transforms/transforms.py:890: UserWarning: Argument interpolation should be of type InterpolationMode instead of int. Please, use InterpolationMode enum.
+  warnings.warn(
+submitit ERROR (2022-05-01 22:09:32,527) - Submitted job triggered an exception
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/submitit/core/_submit.py", line 11, in <module>
+    submitit_main()
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/submitit/core/submission.py", line 72, in submitit_main
+    process_job(args.folder)
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/submitit/core/submission.py", line 65, in process_job
+    raise error
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/submitit/core/submission.py", line 54, in process_job
+    result = delayed.result()
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/submitit/core/utils.py", line 133, in result
+    self._result = self.function(*self.args, **self.kwargs)
+  File "submitit_pretrain.py", line 62, in __call__
+    trainer.main(self.args)
+  File "/Users/dongheelee/Desktop/GitHub/mae/main_pretrain.py", line 128, in main
+    dataset_train = datasets.ImageFolder(os.path.join(args.data_path, 'train'), transform=transform_train)
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/torchvision/datasets/folder.py", line 310, in __init__
+    super().__init__(
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/torchvision/datasets/folder.py", line 145, in __init__
+    classes, class_to_idx = self.find_classes(self.root)
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/torchvision/datasets/folder.py", line 219, in find_classes
+    return find_classes(directory)
+  File "/Users/dongheelee/Library/Python/3.8/lib/python/site-packages/torchvision/datasets/folder.py", line 41, in find_classes
+    classes = sorted(entry.name for entry in os.scandir(directory) if entry.is_dir())
+FileNotFoundError: [Errno 2] No such file or directory: '/tiny-imagenet-200/train'
